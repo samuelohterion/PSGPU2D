@@ -2,7 +2,6 @@
 #define SIMULATION_HPP
 
 #include <GLES3/gl32.h>
-//#include <glm/glm.hpp>
 #include <iostream>
 #include <vector>
 #include <string>
