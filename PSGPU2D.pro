@@ -34,14 +34,24 @@ HEADERS += \
 FORMS += \
 	$$SOURCEDIR/gl2dwdgt.ui
 
-#SHADERDIR = ../PSGPU2D/shaders/gravity
-SHADERDIR = ../PSGPU2D/shaders/fallingMasses
-#SHADERDIR = ../PSGPU2D/shaders/fabrique
+SHADERDIR = ../PSGPU2D/shaders
 
 DISTFILES += \
-	$$SHADERDIR/view.vert \
-	$$SHADERDIR/view.geom \
-	$$SHADERDIR/view.frag \
-	$$SHADERDIR/simu.frag \
-	$$SHADERDIR/simu.geom \
-	$$SHADERDIR/simu.vert
+	$$SHADERDIR/gravity/view.vert \
+	$$SHADERDIR/gravity/view.geom \
+	$$SHADERDIR/gravity/view.frag \
+	$$SHADERDIR/gravity/simu.frag \
+	$$SHADERDIR/gravity/simu.geom \
+	$$SHADERDIR/gravity/simu.vert \
+	$$SHADERDIR/fallingMasses/view.vert \
+	$$SHADERDIR/fallingMasses/view.geom \
+	$$SHADERDIR/fallingMasses/view.frag \
+	$$SHADERDIR/fallingMasses/simu.frag \
+	$$SHADERDIR/fallingMasses/simu.geom \
+	$$SHADERDIR/fallingMasses/simu.vert \
+	$$SHADERDIR/fabrique/view.vert \
+	$$SHADERDIR/fabrique/view.geom \
+	$$SHADERDIR/fabrique/view.frag \
+	$$SHADERDIR/fabrique/simu.frag \
+	$$SHADERDIR/fabrique/simu.geom \
+	$$SHADERDIR/fabrique/simu.vert
