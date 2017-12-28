@@ -32,7 +32,7 @@ init( float interval ) {
 		clamp( ( time - interval / 2 ) / ( interval / 2 ), 0, 1 ) *
 			( 2. * vec4(
 			rand( seed + txPos.xy ), rand( -seed + txPos.yx ),
-			rand( .1 * seed + txPos.xy ), rand( -.1+seed + txPos.yx ) ) - 1. );
+			rand( 5.5 * seed + txPos.xy ), rand( -5.5 + seed + txPos.yx ) ) - 1. );
 }
 
 vec4
@@ -57,13 +57,13 @@ run( ) {
 	if( r.x < -1. ) {
 
 		r.x = -2. - r.x;
-		v.x = -.95 * v.x;
+		v.x = -1. * v.x;
 	}
 
 	if( +1. <= r.x ) {
 
 		r.x = +2. - r.x;
-		v.x = -.95 * v.x;
+		v.x = -1. * v.x;
 	}
 
 	return vec4( r, v );

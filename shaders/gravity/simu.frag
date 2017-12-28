@@ -44,7 +44,7 @@ init( float interval ) {
 	radius = rand( -seed + gTexPos.yx );
 	radius = sqrt( radius );
 
-	return vec4( radius * cos( angle ), radius * sin( angle ), -32 * radius * sin( angle ), 18. * radius * cos( angle ) );
+	return vec4( radius * cos( angle ), radius * sin( angle ), -64 * radius * sin( angle ), 36. * radius * cos( angle ) );
 
 	//return vec4( gTexPos, 0., 0. );
 }
@@ -92,7 +92,8 @@ run( ) {
 	}
 
 	r += dtime * v;
-	v += dtime * acc - .00001 * sqrt( dot( v, v ) ) * v;
+//	v += dtime * acc - .0001 * sqrt( dot( v, v ) ) * v;
+	v += dtime * acc - .0003 * v;
 
 //	while( r.x < -1 ) r.x += 2;
 //	while( 1. < r.x ) r.x -= 2;

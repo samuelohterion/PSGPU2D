@@ -2,7 +2,7 @@
 
 Simulation::Simulation( GLfloat const &p_seed ) :
 state( 0 ),
-simuWdth( 1 << 5 ),
+simuWdth( 1 << 6 ),
 simuHght( 1 << 5 ),
 // x0 x1 v0 v1 |             |
 // v0 v1 a0 a1 | v0 v1 a0 a1 |
@@ -269,8 +269,8 @@ Simulation::prepare( ) {
 
 //	glFrustum( 0., 1., 0., 1., 0., 0. );
 
-	createShaders( "../../shaders/gravity/" );
-//	createShaders( "../../shaders/fabrique/" );
+//	createShaders( "../../shaders/gravity/" );
+	createShaders( "../../shaders/fabrique/" );
 //	createShaders( "../../shaders/fallingMasses/" );
 
 	createTextures( );
@@ -279,8 +279,8 @@ Simulation::prepare( ) {
 
 	createFrameBufferObjects( );
 
-	glClearColor( .265, .265, .265, 1. );
-//	glClearColor( 0,0,0, 1 );
+//	glClearColor( .265, .265, .265, 1. );
+	glClearColor( 0,0,0, 1 );
 //	glClearColor( 1,1,1,1 );
 }
 

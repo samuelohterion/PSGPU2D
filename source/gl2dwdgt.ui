@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>GL2DWdgt</string>
+   <string>PSGPU2D</string>
   </property>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

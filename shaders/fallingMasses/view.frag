@@ -39,5 +39,6 @@ main( void ) {
 */
 //	oCol = vec4( 4. * dot( tPos, tPos ), 1. - 4. * dot( tPos, tPos ), 0., 1. );
 //	fCol = vec4( gTexPos, rand( gTexPos.xx ), 1 );
-	fCol = vec4( 1 - .0000025 * gPosVel.w * gPosVel.w, 1. - .00001 * gPosVel.w * gPosVel.w, 0., 1 );
+//	fCol = vec4( 1 - .0000025 * gPosVel.w * gPosVel.w, 1. - .00001 * gPosVel.w * gPosVel.w, 0., 1 );
+	fCol = vec4( 1 );
 }

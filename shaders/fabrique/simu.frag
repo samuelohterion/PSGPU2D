@@ -17,7 +17,7 @@ uniform float time;
 uniform float dtime;
 
 const vec2
-acc = vec2( 0., -10. );
+acc = vec2( 0., -1e3 );
 
 float
 rand( vec2 last ) {
@@ -31,8 +31,9 @@ init( float interval ) {
 	return
 		clamp( ( time - interval / 2 ) / ( interval / 2 ), 0, 1 ) *
 			( 2. * vec4(
-			rand( seed + txPos.xy ), rand( -seed + txPos.yx ),
-			rand( .1*seed + txPos.xy ), rand( -.1+seed + txPos.yx ) ) - 1. );
+			.1 + .8 * txPos.x + .000 - .000 * rand( +seed + txPos.xy ),
+			.1 + .8 * txPos.y + .000 - .000 * rand( -seed + txPos.yx ),
+			0, 0 ) - 1. );
 }
 
 vec4
@@ -45,25 +46,17 @@ run( ) {
 	r = p.xy,
 	v = p.zw;
 
-	v += dtime * acc - 0.000 * v;
-	r += dtime * v;
+
+	if( 0. < txPos.y ) {
+
+		v += dtime * acc - 0.000 * v;
+		r += dtime * v;
+	}
 
 	if( r.y <= -1. && v.y < 0. ) {
 
 		r.y = -2. - r.y;
-		v.y = -v.y;
-	}
-
-	if( r.x < -1. ) {
-
-		r.x = -2. - r.x;
-		v.x = -.95 * v.x;
-	}
-
-	if( +1. <= r.x ) {
-
-		r.x = +2. - r.x;
-		v.x = -.95 * v.x;
+		v.y = -.5 * v.y;
 	}
 
 	return vec4( r, v );
